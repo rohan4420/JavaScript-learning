@@ -44,5 +44,31 @@ const myFunction=function(){
     console.log("Hello World");
 }
 
-console.log(typeof myFunction);
-console.log(typeof myObj);
+// console.log(typeof myFunction);
+// console.log(typeof myObj);
+
+
+
+/*Memory*/
+
+// Stack (Primitive)  we got copy of original value
+
+let anothername = "uber@.com";
+
+let youtubename = anothername
+youtubename = "ola@.com";
+// console.log(anothername);
+// console.log(youtubename);
+
+// Heap (Non-Primitive) we get referance of orignal value
+
+let objOne = {
+    email : "rohan@gmail.com",
+    age : 23,
+}
+
+let objTwo = objOne
+objTwo.email = "rahul@gmail.com"
+
+console.log(objOne.email);
+console.log(objTwo.email);
