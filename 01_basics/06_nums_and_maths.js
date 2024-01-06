@@ -38,7 +38,7 @@ const hundreds = 100000000;
 const min = 10;
 const max = 20;
 
-// const rand = Math.floor(Math.random() * (max - min + 1)) +min; // max-min +1 gives same o/p as above and as we want in between 10 to 20 so add min
+const rand = Math.floor(Math.random() * (max - min + 1)) +min; // max-min +1 gives same o/p as above and as we want in between 10 to 20 so add min
 
 console.log(rand);
 
