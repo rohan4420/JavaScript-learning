@@ -23,9 +23,44 @@ let booleanIsLogedIn = Boolean(isLoggedIn);
 
 let anyNumber = NaN
 let stringnumber = String(anyNumber)
-console.log(typeof stringnumber);
-console.log(stringnumber);
+// console.log(typeof stringnumber);
+// console.log(stringnumber);
 
 // 33 => 33
 //true => true 
 //Nan => Nan
+
+/* -----Opeartion------*/
+
+let negativeValue = 25;
+// console.log(-negativeValue);
+
+// console.log(2+2);
+// console.log(2-2);
+// console.log(2*2);
+// console.log(2/3);
+// console.log(2**2);
+
+let str1 = "rohan";
+let str2 = " rahul";
+let str3 = str1 + str2;
+// console.log(str3);
+
+// console.log(1+"2");
+// console.log("1"+2);
+// console.log(1+2+"3");
+// console.log("1"+2+3);
+
+// console.log(+true);
+// console.log(+"");
+
+
+
+let gameCounter = 100;
+// gameCounter++;
+console.log(gameCounter++);
+
+console.log(++gameCounter);
+
+// for more about increment decrement go to--prefix postfix js mdn
+
