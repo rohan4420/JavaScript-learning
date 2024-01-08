@@ -1,7 +1,7 @@
 const india = ["virat", "Iyer", "Rohit"]
 const aus = ["Warner", "Smith", "Head"]
 
-//push acts on exiting array
+//push acts on existing array
 // india.push(aus);
 // console.log(india);  //[ 'virat', 'Iyer', 'Rohit', [ 'Warner', 'Smith', 'Head' ] ]
 // console.log(india[3][1]); //Smith
