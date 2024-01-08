@@ -1,5 +1,5 @@
 // 2 ways to cretae obkect 
-// 1) literal
+// 1) literal  (This example creates an empty JavaScript object, and then adds 4 properties:)
 // 2) constructor  //singleton
 
 // object literals
