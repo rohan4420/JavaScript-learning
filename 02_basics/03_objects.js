@@ -1,4 +1,4 @@
-// 2 ways to cretae obkect 
+// 2 ways to cretae object 
 // 1) literal  (This example creates an empty JavaScript object, and then adds 4 properties:)
 // 2) constructor  //singleton
 
@@ -20,6 +20,8 @@ const user = {
     isLoggedIn : false,
     isLastLoginDays : ["Monday","Saturday"]
 }
+
+//delete person.age;  //to delete properties
 
 // console.log(user.name);
 // console.log(user."fullName");
