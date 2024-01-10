@@ -15,6 +15,11 @@ const user = {
 }
 //this => refer to current context(values)
 
+// this alone : refers to the global object.
+// this in function : the global object is the default binding for this.
+// this in strict mode : in strict mode, this is undefined.
+// this in event handlers
+
 // user.welcomeMessgae()   //rohan,welcome to website
 
 // user.userName = "ram"
