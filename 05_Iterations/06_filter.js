@@ -56,4 +56,8 @@ let userBooks = books.filter( (bk) =>
 // Q)return those books who is published after 2000
 
 let publishedBooks = books.filter(  (bk) => bk.publish > 2000 && bk.edition == 2014 )
-console.log(publishedBooks);
+// console.log(publishedBooks);
+
+const mynums = [1, 2, 3, 4, 5]
+const myone = mynums.filter( (item)=> item+10 )  //[ 1, 2, 3, 4, 5 ]   with map //[ 11, 12, 13, 14, 15 ]
+console.log(myone);
