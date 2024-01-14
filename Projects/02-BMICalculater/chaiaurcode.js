@@ -11,8 +11,6 @@ form.addEventListener('submit', function(e){
     // console.log(width);
     const results = document.querySelector('#results')
 
-
-
     if(height === 0 || height < 0 || isNaN(height)){
         results.innerHTML = `Please give valid height ${height}`
     }
@@ -22,8 +20,18 @@ form.addEventListener('submit', function(e){
     else{
        const BMI = (weight / ((height*height)/10000)).toFixed(2)
 
-       //show the result
-       results.innerHTML = `<span>${BMI}</span>`
+        //show the result
+        results.innerHTML = `<span>${BMI}</span>`
+        const print = document.querySelector('#printguide')
+        if(BMI < 18.6){
+            print.innerHTML = `${BMI}-Under Weight`    
+        }
+        else if(BMI > 18.6 && BMI < 24.9){
+            print.innerHTML = `${BMI}-Normal Range Weight`    
+        }
+        else{
+            print.innerHTML = `${BMI}-Over Weight`    
+        }
     }
-    
+
 })
