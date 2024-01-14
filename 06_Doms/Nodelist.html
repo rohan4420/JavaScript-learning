@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NodeList Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff">
+</body>
+<script>
+    //to create div element
+    const div = document.createElement('div')
+    console.log(div);
+
+    //this is just cretaed in memory it will not view in element
+    div.className = 'main'
+    div.id = Math.round(Math.random()*10+1)
+    //by this it directly set the attribute so it makes only one round
+    div.setAttribute('title','genrated title')
+    div.style.backgroundColor = 'green'
+    div.style.padding = '10px'
+    //it will over-ride the original context so it makes 2 round
+    // 1)
+    // div.innerText = "Atmanirbhar "
+    // 2)
+    const textNode = document.createTextNode("Retest")
+    div.appendChild(textNode)
+    //creted in memory
+    // <div class="main" id = 14 tittle = "genrated title" style="background-color: green; padding: 10px;">Atmanirbhar </div>
+
+    //we have to attach this on page 
+    document.body.appendChild(div)
+    
+</script>
+</html>
