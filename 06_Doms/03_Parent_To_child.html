@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom with chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+        <div class="day">Friday</div>
+        <div class="day">Saturday</div>
+        <div class="day">Sunday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector(".parent")
+    // console.log(parent)
+    // console.log(parent.children)
+    // console.log(parent.children[2])
+    // console.log(parent.children[2].innerHTML)
+
+    // normal for loop we can apply on any collection
+    // for (let i = 0; i < parent.children.length; i++) {
+    //     console.log(parent.children[i].innerHTML);
+    // }
+    parent.children[1].style.backgroundColor='red';
+
+    // used many times
+    // console.log(parent.firstElementChild);
+    // console.log(parent.lastElementChild);
+
+    //queryselecter takes lot time to execute so avoid using it when you can do by . methods
+    const dayOne = document.querySelector('.day')
+    // console.log(dayOne);   //monday
+    // console.log(dayOne.parentElement);   //monday.parentElement =>whole div element
+    // console.log(dayOne.nextElementSibling)  //mondaynextElementSibling  =>bhai  =>Tuesday
+
+    console.log("Nodes :",parent.childNodes);   //we have 15 nodes //it takes spaces too
+
+
+</script>
+</html>
