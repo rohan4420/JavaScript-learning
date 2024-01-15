@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur cofee</title>
+</head>
+<body>
+    <h1>Chai aur Code</h1>
+    <button id="stop">Stop</button>
+    <button id="start">Start</button>
+</body>
+<script>
+    let sysDate = function(str){
+        console.log(str,Date.now());
+    }
+    
+    let setString;
+    document.querySelector("#start").addEventListener('click',function(){
+        setString = setInterval(sysDate, 1000, "wait")
+    },false)
+
+    document.querySelector("#stop").addEventListener('click',function(){
+        clearInterval(setString);
+        setString = ""
+    },false)
+
+
+</script>
+</html>
