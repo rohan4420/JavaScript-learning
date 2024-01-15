@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+                <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" target="_blank" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+
+    // 1) in div tag onclick event
+    // 2) document.getElementById("owl").onclick = function(){
+    //     alert('Owl clicked')
+    // }
+     //3) now event which are prefered bcz it gives lot of functionality
+    //  document.getElementById('owl').addEventListener('click',function(e){
+    //     alert('owl clicked')
+
+    // })
+    // 4)atttach event //when there was shortage of event listener
+    // 5)onEventListener //jQuery
+
+   
+
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+
+    //event propogation
+    // 1)bubling     3rd parameter false => first gives owl clicked the ul clicked 
+    // 2)captureing  3rd parameter true => first gives ul clicked then owl clicked  
+   
+    //bubling => bottom to top
+    // document.getElementById('owl').addEventListener('click',function(e){
+    //     console.log("owl clicked")  //we get browser events and environment events(mouseclick...)        
+    // },false)
+
+    // document.getElementById('images').addEventListener('click',function(e){
+    //     console.log("ul clicked")
+    // },false)
+    //o/p =>// owl clicked  ul clicked
+
+     //capturing = > top to bottom
+    //  document.getElementById('owl').addEventListener('click',function(e){
+    //     console.log("owl clicked")  //we get browser events and environment events(mouseclick...)
+    //         // owl clicked  ul clicked
+    // },true)
+    // document.getElementById('images').addEventListener('click',function(e){
+    //     console.log("ul clicked")
+    // },true)
+    //o/p =>ul clicked owl clicked
+
+    //stopPropagation
+    // document.getElementById('owl').addEventListener('click',function(e){
+    //     console.log("owl clicked")  //we get browser events and environment events(mouseclick...)
+    //         e.stopPropagation() //works same as prevent default 
+    //         // o/p => owl clicked
+    // },false)
+    // document.getElementById('images').addEventListener('click',function(e){
+    //     console.log("ul clicked")
+    // },false)
+
+    // //preventdefault
+    // document.getElementById('google').addEventListener('click',function(e){
+    //     console.log("google clicked");
+    //     e.preventDefault();
+    //     e.stopPropagation()
+    // },false)
+
+
+    //when we click on image the image should gets removed
+
+    document.querySelector('#images').addEventListener('click',function(e){
+        // console.log(e);
+        // PointerEvent {isTrusted: true, pointerId: 1, width: 1, height: 1, pressure: 0, …}
+         // console.log(e.target); //whole image tag
+        // console.log(e.target.parentNode);    <li></li>
+       
+        // console.log(e.target.tagName);
+         // let removeIt = e.target.parentNode
+        //   1)  
+        // removeIt.remove()
+        // 2)   removeIt.parentNode.removeChild(removeIt)
+
+        
+        //this if condition we wrote bcz of event spiillover
+        //if we create on li it was getting removed so we did this
+        if(e.target.tagName === "IMG"){
+            let removeIt = e.target.parentNode
+            console.log(e.target.id);
+            removeIt.remove()
+        }
+        
+    },false)
+
+  
+
+
+</script>
+</html>
