@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code</title>
+</head>
+<body>
+    <h1>Chai aur Code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+
+    let sayRohan = function name(params) {
+        // console.log('rohan');
+    }
+    //it prints only one time after 2sec
+    setTimeout(function name(params) {
+        // console.log('rohan');
+    },2000)
+
+    //it prints every time after 2 sec
+    setInterval(sayRohan,2000)  //just give referance as it is handler
+
+    //change text after 2 second
+
+    let changeText = function (){
+        document.querySelector('h1').innerHTML = `Best JS Course`
+    }
+    const changeMe = setTimeout(changeText,2000)
+
+    // Now if we want to stop changing the text use clearTimeout
+
+    // clearTimeout(changeMe)
+
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearTimeout(changeMe);
+        console.log("Stopped!");
+    },false)
+    
+</script>
+</html>
