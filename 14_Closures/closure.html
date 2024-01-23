@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closures</title>
+</head>
+<body style="background-color :#313131;">
+    <button id="red">Red</button>
+    <button id="green">Green</button>
+</body>
+<!-- <script>
+    // a function inside function have outer function with some local variables is easily accessible to inner function
+    // but anything declared in inner function is not accessible to outer function and this is called lexical scoping
+    function init(){
+        let name = "rohan"
+        function dsiplayName(){
+            console.log("inner",name);
+        }
+        dsiplayName()
+    }
+    init()
+    console.log("to outer",name);
+</script> -->
+
+<script>
+    // document.getElementById('red').onclick=function(){
+    //     document.body.style.backgroundColor = 'red'
+    // }
+    // document.getElementById('green').onclick=function(){
+    //     document.body.style.backgroundColor = 'green'
+    // }
+
+
+    // closures
+    // function makeFunc() {
+    // const name = "Mozilla";
+    // function displayName() {
+    // console.log(name);
+    // }
+    // return displayName;   //it returns lexical scope
+    // }
+
+    // const myFunc = makeFunc();
+    // myFunc();
+
+    //example of closure
+    // function makeAdder(x) {
+    // return function (y) {
+    //     return x + y;
+    // };
+    // }
+
+    // const add5 = makeAdder(5);
+    // const add10 = makeAdder(10);
+
+    // console.log(add5(2)); // 7
+    // console.log(add10(2)); // 12
+
+    function clickHandler(color){
+        // document.body.style.backgroundColor = `${color}`
+        return function(){
+            document.body.style.backgroundColor = `${color}`
+        }
+    }
+    document.getElementById('red').onclick = clickHandler("red")  //onclick will not execute the function it just want output of function so here we can user closure
+    document.getElementById('green').onclick = clickHandler("green")
+</script>
+</html>
+
+
+<!-- Note -->
+<!-- Variables created without a declaration keyword (var, let, or const) are always global, even if they are created inside a function. -->
